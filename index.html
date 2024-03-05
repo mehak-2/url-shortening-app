@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
+<style>
+ .main {
+            background-color: #f8f9fa;
+            padding: 10px;
+        }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+        .navbar img {
+            height: 50px;
+        }
+        .navbar ul {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            
+        }
+        .navbar li {
+            margin-right: 20px;
+            cursor: pointer;
+        }
+     .navbar button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 800px; 
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .content p {
+            flex: 1;
+            margin-right: 20px; 
+        }
+        .content img {
+            max-width: 50%; 
+            height: auto;
+        }
+    .searchbox {
+    position: relative;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: rgb(55, 45, 83);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.search-input {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    outline: none;
+    margin-left: 20px; 
+    box-sizing: border-box;
+}
+
+.searchbox button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .search-input {
+        width: 60%;
+    }
+    .searchbox button {
+        margin-top: 10px;
+        width: 30%;
+    }
+}
+
+.content1{
+            align-items: center;
+            margin: 0 auto; 
+            padding: 20px;
+            border-radius: 5px;
+            background: #ccc;
+}
+.content1 h1, .content1 p {
+  text-align: center;
+}
+.container {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .card {
+            flex: 1 1  30%;
+            max-width: 30%;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .card p {
+            font-size: 1rem;
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            .card {
+              flex-direction: column;
+             align-items: flex-start;
+            }
+        }
+        @media (max-width: 768px) {
+            .container {
+              flex-direction: column;
+             align-items: center;
+            }
+        }
+  .last {
+    text-align: center;
+    background-color: rgb(55, 45, 83);
+    color: whitesmoke;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .last {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.last button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.footer {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: #585656;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+.footer ul {
+    list-style-type: none;
+}
+
+.footer img {
+    color: #f8f9fa; 
+}
+
+#shortened-links {
+    margin-top: 20px;
+}
+
+
+/*link elements ki styling*/
+#shortened-links {
+    margin-top: 20px;
+}
+
+/* shortened links container ki styling*/
+#shortened-links {
+    margin-top: 20px;
+}
+
+/*link elements ki styling*/
+#shortened-links div {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+#shortened-links p {
+    margin: 0;
+}
+
+#shortened-links .link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px; 
+}
+
+#shortened-links button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px; 
+}
+
+#shortened-links button:hover {
+    background-color: #0056b3;
+}
+
+</style>
+  <div class="main">
+    <div class="navbar">
+      <img src="images/logo.svg" alt="Logo">
+      <ul>
+    <li>features</li>
+    <li>Pricing</li>
+    <li>Resources</li>
+    </ul>
+    <ul>
+    <button>login</button>
+    <button>Sign Up</button>
+  </ul>
+</div>
+   </div>
+   <div class="content">
+    <p><strong>More than just short links</strong>Build your brand's recognition and get detailed insights on how your links are performing</p>
+    <img src="images/pic.svg"></img>
+    </div>
+    <div class="searchbox">
+      <input type="text" placeholder="Shorten a link here " class="search-input" id="search-input">
+      <button onclick="shortenLink()">Shorten It!</button>
+  </div>
+  <div id="shortened-links"></div>
+  <div class="content1">
+    <h1>Advanced Statistics</h1>
+    <p>Track how your links are performing across the web with our advanced statistics dashboard</p>
+    <div class="container">
+      <div class="card">
+          <p>Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.</p>
+      </div>
+      <div class="card">
+          <p>Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.</p>
+      </div>
+      <div class="card">
+          <p>Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.</p>
+      </div>
+  </div>
+<div class="last">
+  <h1>Boost Your links today</h1>
+  <button type="4">Get started</button>
+</div>
+</div>
+<div class="footer">
+  <ul>
+    <img src="images/logo.svg" alt="Logo">
+  </ul>
+  <ul>
+<li>Features</li>
+<li> Link Shortening</li>
+  <li>Branded Links</li>
+  <li>Analytics</li>
+  </ul>
+  <ul>
+    <li>Resources</li>
+    <li> Blog</li>
+      <li>Developers</li>
+      <li>Support</li>
+      </ul>
+      <ul>
+        <li>Company</li>
+        <li>About</li>
+          <li>Our team</li>
+          <li>Careers</li>
+          <li>Contact</li>
+          </ul>
+        </div>
+   </div>
+  </div>
+</head>
+<body>  
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
