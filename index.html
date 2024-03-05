@@ -204,22 +204,12 @@
     color: #f8f9fa; 
 }
 
+/* Container for shortened links */
 #shortened-links {
     margin-top: 20px;
 }
 
-
-/*link elements ki styling*/
-#shortened-links {
-    margin-top: 20px;
-}
-
-/* shortened links container ki styling*/
-#shortened-links {
-    margin-top: 20px;
-}
-
-/*link elements ki styling*/
+/* Styling for each link element */
 #shortened-links div {
     background-color: #f9f9f9;
     padding: 10px;
@@ -227,17 +217,21 @@
     border-radius: 5px;
 }
 
+/* Styling for the paragraph inside each link */
 #shortened-links p {
     margin: 0;
 }
 
+/* Styling for the link and button inside each link */
 #shortened-links .link {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: space-between;
-    margin-bottom: 5px; 
+    margin-bottom: 5px;
 }
 
+/* Styling for the copy button */
 #shortened-links button {
     padding: 5px 10px;
     background-color: #007bff;
@@ -246,11 +240,20 @@
     border-radius: 3px;
     cursor: pointer;
     font-size: 14px;
-    margin-left: 10px; 
+    margin-top: 5px;
 }
 
-#shortened-links button:hover {
-    background-color: #0056b3;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #shortened-links .link {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #shortened-links button {
+        margin-top: 0;
+    }
 }
 
 
